@@ -1,0 +1,20 @@
+import phonenumbers
+from phonenumbers import carrier, geocoder, timezone
+
+mobileNo = input("Enter Mobile Number with Country code: ")
+mobileNo = phonenumbers.parse(mobileNo)
+
+# get timezone a phone number
+print(timezone.time_zone_for_number(mobileNo))
+
+# Getting carrier of a phone Number
+print(carrier.name_for_number(mobileNo, "en"))
+
+# Getting region information 
+print(geocoder.description_for_number(mobileNo, "en"))
+
+# validating a phone number
+print("valid Mobile Number :",phonenumbers.is_valid_number(mobileNo))
+
+# Checking possibility of a number
+print("checking possibility of Number :", phonenumbers.is_possible_number(mobileNo))
